@@ -8,7 +8,7 @@ from google.colab import drive
 drive.mount('/content/drive')
 ```
 
-The code you provided is used to mount Google Drive in a Google Colab notebook. Google Colab is a cloud-based platform that allows you to run and write code using Jupyter notebooks.
+The code is used to mount Google Drive in a Google Colab notebook. Google Colab is a cloud-based platform that allows us to run and write code using Jupyter notebooks.
 
 Here's a breakdown of the code:
 
