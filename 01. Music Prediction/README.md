@@ -74,3 +74,43 @@ Here's a step-by-step explanation of the code:
    - `predictions`: Displays the predictions made by the model for the provided input samples.
 
 The variable "predictions" will contain the predicted genres for the given input samples based on the trained decision tree model.
+
+
+## 3rd Block
+
+```python
+from sklearn.model_selection import train_test_split
+from sklearn.metrics import accuracy_score
+
+X_train, X_test, y_train, y_test = train_test_split (X, y, test_size=0.2)
+
+model.fit(X_train, y_train)
+prediction = model.predict(X_test)
+
+score = accuracy_score(y_test, prediction)
+score
+```
+This code is for training a machine learning model (presumably a decision tree classifier, given the previous usage of `model`), evaluating its performance, and calculating the accuracy score using scikit-learn (sklearn).
+
+Here's a step-by-step explanation of the code:
+
+1. **Import Necessary Libraries**:
+   - `from sklearn.model_selection import train_test_split`: Imports the `train_test_split` function from scikit-learn, which is used to split the dataset into training and testing sets.
+   - `from sklearn.metrics import accuracy_score`: Imports the `accuracy_score` function from scikit-learn, which is used to calculate the accuracy of the model's predictions.
+
+2. **Split the Data into Training and Testing Sets**:
+   - `X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2)`: Splits the features (X) and target labels (y) into training and testing sets. The `test_size=0.2` argument indicates that 20% of the data will be used for testing, and the remaining 80% will be used for training. The resulting sets are `X_train` (training features), `X_test` (testing features), `y_train` (training labels), and `y_test` (testing labels).
+
+3. **Train the Model on the Training Set**:
+   - `model.fit(X_train, y_train)`: Trains the model using the training features (`X_train`) and their corresponding labels (`y_train`).
+
+4. **Make Predictions on the Testing Set**:
+   - `prediction = model.predict(X_test)`: Uses the trained model to make predictions on the testing features (`X_test`), generating predicted labels.
+
+5. **Calculate Accuracy**:
+   - `score = accuracy_score(y_test, prediction)`: Calculates the accuracy score by comparing the predicted labels (`prediction`) with the actual labels for the testing set (`y_test`).
+
+6. **Display the Accuracy Score**:
+   - `score`: Displays the accuracy score, representing the proportion of correctly predicted labels in the testing set.
+
+The `accuracy_score` helps evaluate the performance of the model by quantifying how well it predicts the labels for the unseen (testing) data. A higher accuracy score indicates a better-performing model.
