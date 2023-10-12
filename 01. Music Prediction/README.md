@@ -1,9 +1,37 @@
 # Music Prediction Code Explanation
 
 
+## 1st Block
+
+```python
+from google.colab import drive
+drive.mount('/content/drive')
+```
+
+The code you provided is used to mount Google Drive in a Google Colab notebook. Google Colab is a cloud-based platform that allows you to run and write code using Jupyter notebooks.
+
+Here's a breakdown of the code:
+
+1. **Import Library and Mount Drive**:
+   - `from google.colab import drive`: Imports the "drive" module from the "google.colab" library.
+   - `drive.mount('/content/drive')`: Mounts your Google Drive at the specified location '/content/drive' within the Colab environment.
+
+2. **Mounting Google Drive**:
+   - When you run `drive.mount('/content/drive')`, it initiates a process where you will be prompted to click on a link.
+   - This link directs you to an authentication page where you need to sign in to your Google account (if you're not already signed in) and allow access to your Google Drive.
+   - After granting access, you'll be provided with an authorization code.
+
+3. **Authorize and Mount Drive in Colab**:
+   - You paste the authorization code into the provided input box in the Colab notebook and press Enter.
+   - The Colab environment then uses this code to authenticate and establish a connection between your Colab notebook and your Google Drive account.
+   - Your Google Drive is now mounted, and you can access your files and directories from within your Colab notebook at the specified location ('/content/drive').
+
+By mounting your Google Drive, you can easily access and work with files and data stored in your Google Drive directly from your Colab notebook, allowing for seamless integration and collaboration between Google Drive and the Colab environment.
+
+
 ## 2nd Block
 
-```
+```python
 import pandas as pd
 from sklearn.tree import DecisionTreeClassifier
 
