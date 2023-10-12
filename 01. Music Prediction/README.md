@@ -114,3 +114,33 @@ Here's a step-by-step explanation of the code:
    - `score`: Displays the accuracy score, representing the proportion of correctly predicted labels in the testing set.
 
 The `accuracy_score` helps evaluate the performance of the model by quantifying how well it predicts the labels for the unseen (testing) data. A higher accuracy score indicates a better-performing model.
+
+## 4th Block
+
+```python
+from sklearn import tree
+tree.export_graphviz(model, out_file='music-recommender.dot',
+                     feature_names=['age', 'gender'],
+                     class_names=sorted(y.unique()),
+                     label='all',
+                     rounded=True,
+                     filled=True)
+```
+This code utilizes scikit-learn's `tree` module to export a decision tree model into a Graphviz DOT file, which can be used to visualize the decision tree.
+
+Here's a step-by-step explanation of the code:
+
+1. **Import Necessary Libraries**:
+   - `from sklearn import tree`: Imports the `tree` module from scikit-learn, which includes functions to work with decision trees.
+
+2. **Export the Decision Tree to a DOT File**:
+   - `tree.export_graphviz(model, out_file='music-recommender.dot', feature_names=['age', 'gender'], class_names=sorted(y.unique()), label='all', rounded=True, filled=True)`: Exports the decision tree model (`model`) to a Graphviz DOT file named 'music-recommender.dot'.
+     - `model`: The trained decision tree model to be exported.
+     - `out_file='music-recommender.dot'`: Specifies the output file name for the DOT file.
+     - `feature_names=['age', 'gender']`: Specifies the feature names used in the tree visualization.
+     - `class_names=sorted(y.unique())`: Specifies the class (genre) names for the tree visualization, sorted and obtained from the unique values in the target variable (`y`).
+     - `label='all'`: Specifies to label all nodes in the decision tree.
+     - `rounded=True`: Specifies to use rounded rectangles for decision nodes in the visualization.
+     - `filled=True`: Specifies to fill decision nodes with colors based on the majority class.
+
+The resulting 'music-recommender.dot' file contains the information needed to visualize the decision tree using Graphviz tools. This visualization helps in understanding how the decision tree is making predictions based on the provided features (age and gender).
