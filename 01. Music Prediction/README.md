@@ -1,5 +1,25 @@
 # Music Prediction Code Explanation
 
+
+## 2nd Block
+
+```
+import pandas as pd
+from sklearn.tree import DecisionTreeClassifier
+
+#read file
+music_data = pd.read_csv('/content/drive/MyDrive/Colab Notebooks/music.csv')
+X=music_data.drop(columns=['genre'])
+y=music_data['genre']
+
+model = DecisionTreeClassifier()
+model.fit(X,y)
+
+
+predictions = model.predict([ [21,1], [22, 0], [50, 0] ])
+predictions
+```
+
 This code is written in Python and involves using the Pandas library to read and manipulate data and the scikit-learn library to create and use a decision tree classifier for a music genre classification task.
 
 Here's a step-by-step explanation of the code:
